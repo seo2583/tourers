@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper_member">
+
+	<select id="login" resultType="kr.co.tourers.vo.MemberVO">
+		SELECT * FROM tr_user WHERE tr_id=#{tr_id} AND tr_pass=PASSWORD(#{tr_pass}); 
+	</select>
+	
+	<select id="getTerms" resultType="kr.co.tourers.vo.TermsVO">
+		SELECT * FROM TERMS;
+	</select>
+	
+	<insert id="register">
+		INSERT INTO tr_user SET
+			tr_id=#{tr_id},
+			tr_pass=PASSWORD(#{tr_pass}),
+			tr_name=#{tr_name},
+			tr_nick=#{tr_nick},
+			tr_email=#{tr_email},
+			tr_gender=#{tr_gender},
+			tr_year=#{tr_year},
+			tr_month=#{tr_month},
+			tr_zip=#{tr_zip},
+			tr_addr1=#{tr_addr1},
+			tr_addr2=#{tr_addr2},
+			tr_regip=#{tr_regip},
+			tr_regdate=NOW();
+	</insert>
+	
+	<select id="duplCheckUid" resultType="int">	
+		SELECT COUNT(*) FROM tr_user WHERE tr_id=#{uid}; 
+	</select>
+	
+	<select id="duplCheckNick" resultType="int"> 
+		SELECT COUNT(*) FROM tr_user WHERE tr_nick=#{nick}; 
+	</select>
+	
+	<select id="duplCheckEmail" resultType="int"> 
+		SELECT COUNT(*) FROM tr_user WHERE tr_email=#{email}; 
+	</select>
+	
+</mapper>

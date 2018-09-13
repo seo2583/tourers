@@ -1,0 +1,7 @@
+JUnit 단위테스트 설정방법
+
+1. spring-test, log4jdbc 라이브러리 pom.xml에 추가
+2. junit 라이브러리 버전업 4.7 -> 4.12(pom.xml)
+3. log4jdbc.log4j2.properties, logback.xml 파일을 src/test/resources 경로에 복사
+4. applicationContext.xml 파일을 src/test/resources 경로에 복사
+5. applicationContext.xml 내에 'resoucres 정적경로 지정' 부분 주석처리

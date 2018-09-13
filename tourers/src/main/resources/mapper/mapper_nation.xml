@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper_nation">
+
+	<select id="getNationInfo" resultType="kr.co.tourers.vo.NationInfoVO">
+		<![CDATA[	
+		SELECT * FROM tr_nation_info WHERE tr_country_name LIKE CONCAT('%',#{nationName},'%');
+		]]>
+	</select>
+	
+	<select id="getIsNation" resultType="int">
+		SELECT COUNT(*) FROM tr_nation_info WHERE tr_country_name LIKE CONCAT('%',#{nationName},'%');
+	</select>
+	
+	<select id="getSpotName" resultType="kr.co.tourers.vo.NationSpotVO">
+		SELECT * FROM tr_nation_spot WHERE tr_country_name_simple=#{nationName}; 
+	</select>
+	
+	<select id="getSpotDetail" resultType="kr.co.tourers.vo.NationSpotVO">
+		SELECT * FROM tr_nation_spot WHERE tr_spot_name=#{spotName};
+	</select>
+	
+</mapper>

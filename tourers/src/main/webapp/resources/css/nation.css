@@ -1,0 +1,182 @@
+#board .tour_spot{
+  position: relative;
+  padding-left: 50px;
+  padding-right: 56px;
+  margin-top: 50px;
+  margin-left: 30px;
+  height: auto;
+}
+
+.tour_spot > .spot_btn {
+  margin-bottom: 30px;
+}
+
+.spot {
+  display: inline-block;
+  padding: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  background: azure;
+}
+
+.spot:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+}
+
+.spot:active {
+  position: relative;
+  top: 0.5px;
+}
+
+.spot_info {
+  overflow: hidden;
+  height: auto;
+  display: none;
+}
+
+.spot_info > section {
+  position: relative;
+  overflow: hidden;
+  width: 900px;
+}
+
+.spot_info > section h2 {
+  display: inline-block;
+  float: left;
+  font-size: 35px;
+}
+
+.spot_info > section > .like {
+  display: inline-block;
+  float: right;
+  margin-right: 30px;
+  padding-top: 8px;
+  font-size: 25px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.spot_info > section button:focus {
+  outline: none;
+}
+
+.spot_info > section > ul {
+  width: 4500px;
+  height: auto;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.spot_info > section > ul li {
+  display: inline-block;
+}
+
+.spot_info > section > ul img {
+  overflow: hidden;
+  width: 900px;
+  height: 500px;
+}
+
+.spot_info > section > nav {
+  position: absolute;
+  bottom: 10px;
+  right: 110px;
+  width: 47px;
+  height: 47px;
+  font-size: 15px;
+  padding-top: 15px;
+  opacity: 0.6;
+  color: #fff;
+  text-align: center;
+  background: url(../img/spotCount.jpg) no-repeat;
+}
+
+.spot_info > section .picMove {
+  position: absolute;
+  bottom: 10px;
+  width: 47px;
+  height: 47px;
+  opacity: 0.6;
+  background: url(../img/spotSlide.jpg) 0 0 no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.spot_info > section .prev {
+  right: 60px;
+}
+
+.spot_info > section .prev:hover {
+  background-position: 0 -47px;
+}
+
+.spot_info > section .next {
+  right: 10px;
+  background-position: -49px 0;
+}
+
+.spot_info > section .next:hover {
+  background-position: -49px -47px;
+}
+
+.spot_info > .spot_intro {
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.spot_info ul {
+  float: left;
+  margin-top: 10px;
+  width: 49.5%;
+  line-height: 1.5;
+}
+
+.spot_info ul:first-of-type {
+  margin-right: 9px;
+}
+
+.spot_info > .spot_intro > ul li {
+  position: relative;
+  display: block;
+  padding-left: 40px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.spot_info ul li > i {
+  position: absolute;
+  display: block;
+  top: 1px;
+  left: 0;
+  font-size: 23px;
+  color: darkgrey;
+}
+
+.spot_info ul li a {
+  text-decoration: underline;
+}
+
+.spot_info > .spot_explain {
+  width: 100%;
+  height: auto;
+  padding: 30px 0;
+  line-height: 2;
+  border-top: 1px solid cyan;
+}
+
+.spot_info > .spot_explain_title {
+  padding-left: 50px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.spot_info > .spot_explain_content {
+  font-size: 14px;
+  word-break: keep-all;
+}
+

@@ -1,0 +1,494 @@
+.sub {
+  height: 115%;
+  width: 100%;
+  margin-top: 69px;
+  overflow: hidden;
+}
+
+.sub input[type=text] {
+  width: 100%;
+  height: 23px;
+  border: 0;
+}
+
+.bg {
+  max-width: 1280px;
+  height: 300px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg > img {
+  width: 100%;
+  height: 100%;
+}
+
+.sub > div {
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+aside {
+  float: left;
+  width: 220px;
+  height: 748px;
+  text-align: center;
+  background: url('../img/sub_aside_rt_line.png') right 0px no-repeat;
+}
+
+aside > img {
+  width: 120px;
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+
+aside > ul {
+  margin-top: 15px;
+  height: 85%;
+  line-height: 4;
+}
+
+aside > ul > li:first-child {  
+  line-height: 3;
+}
+
+aside > ul > li > a {
+  text-align: center;
+  color: #4e8df5;
+}
+
+aside > ul > .resize > a {
+  font-size: 25px;
+  font-weight: bold;
+  color: mediumblue;
+  white-space: nowrap;
+}
+
+aside > ul > li > a:hover {
+  text-decoration: underline;
+  color: #f49d9d;
+}
+
+aside > ul > .on > a {
+  font-weight: bold;
+  color: red; 
+}
+
+#board {
+  position: relative;
+  float: left;
+  width: 1060px;
+  min-height: 748px;
+  padding: 0 10px;
+}
+
+#board table {
+  border-collapse: collapse;
+}
+
+#board > img {
+  position: absolute;
+  top: 35px;
+  left: 95px;
+  width: 180px;
+}
+
+#board .intro {
+  height: auto;
+  margin-top: 100px;
+}
+
+#board table a:hover {
+  text-decoration: underline;
+}
+
+
+.intro p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 20px;
+  margin-left: 10%;
+}
+
+#board .list {
+  height: auto;
+  margin-top: 100px;
+}
+
+#board .writeBtn {
+  width: 80%;
+  padding: 15px 0;
+  margin-left: 10%;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 5px solid #a5e5e7;
+}
+
+.list table {
+  width: 80%;
+  margin-top: 20px;
+  margin: 0 auto;
+  border-top: 5px solid #a5e5e7;
+}
+
+.list table tr:first-child > td {
+  font-weight: bold;
+  text-align: center;
+  background: whitesmoke;
+}
+
+.list table td {
+  padding: 9px 7px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.list table td:nth-of-type(1) { width: 55px; }
+.list table td:nth-of-type(2) { text-align: left; padding: 0 20px; }
+.list table td:nth-of-type(3) { width: 100px; }
+.list table td:nth-of-type(4) { width: 110px; }
+.list table td:nth-of-type(5) { width: 55px; }
+
+#board .picture {
+  height: auto;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.picture ul {
+  width: 80%;
+  height: auto;
+  margin-top: 20px;
+  margin: 0 auto;
+  border-top: 5px solid #a5e5e7;
+  overflow: hidden;
+}
+
+.picture ul li {
+  position: relative;
+  float: left;
+  width: 157px;
+  height: 157px;
+  margin: 6px 11.5px 80px 0;
+  border: 1px solid pink;
+}
+
+.picture ul > li:nth-of-type(5n) {
+  margin-right: 0;
+}
+
+.picture ul li > div {
+  cursor: pointer; 
+  height: inherit;
+}
+
+.picture ul li > div img {
+  width: 156px;
+  height: 157px;
+}
+
+.picture table {
+  position: absolute;
+  top: 160px;
+  width: 155px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #666666;
+  overflow: hidden;
+}
+
+.picture table tr:nth-of-type(1) > td:nth-of-type(1) {
+  display: inline-block;
+  width: 120px;
+  text-overflow: ellipsis;  
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.picture table tr:nth-of-type(2) > td {
+  font-size: 11px;
+  color: #c2c2c2;
+}
+
+.btnWrite {
+  margin-right: 5px;
+  padding: 5px;
+  font-size: 14px;
+  background: #f2f4fb;
+  border: 1px solid #a5e5e5;
+}
+
+.paging {
+  padding: 20px 0 0;
+  text-align: center;
+}
+
+.paging span a {
+  margin: 5px;
+  font-size: 13px;
+}
+
+#board .view {
+  height: auto;
+  margin-top: 100px;
+}
+
+.view img {
+  position: absolute;
+  top: 55px;
+  left: 83%;
+  width: 60px;
+}
+
+.view table {
+  width: 80%;
+  margin-top: 20px;
+  margin: 0 auto;
+  border-top: 5px solid #a5e5e7;
+}
+
+.view table td {
+  padding: 9px 7px;
+  font-size: 12px;
+  line-height: 2;
+  border-top: 1px solid #e5e5e5;
+}
+
+.view td:first-child {
+  width: 100px;
+  font-weight: bold;
+  text-align: center;
+  background: #f5f8f9;
+}
+
+.view textarea {
+  width: 100%;
+  border: 0;
+  resize: none;
+}
+
+.view > nav {
+  margin: 0 auto;
+  padding: 9px;
+  width: 80%;
+  height: 35px;
+  font-size: 13px;
+  background: #fff;
+  border-top: 1px solid #e3e3e3;
+}
+
+.view > nav > span {
+  margin: 0 10px;
+}
+
+.view section {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.comments {
+  width: 80%;
+  margin: 0 auto;
+	padding: 0 15px;
+  margin-bottom: 10px;
+	border: 1px solid #e3e3e3;
+	background: #f9f9f9;
+  overflow: hidden;
+}
+
+.comments h3 {
+  margin-top: 15px;
+  padding-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.comments > .comment {
+	margin-top: 10px;
+	padding-top: 10px;
+  border-bottom: 1px dotted #999;
+}
+
+.comments > .comment > textarea {
+  width: 95%;
+  margin: 10px 0 28px;
+  resize: none;
+  background: transparent;
+}
+
+.comment > div {
+  margin-top: -65px;
+  padding-bottom: 30px;
+  text-align: right;
+}
+
+.comments > .empty {
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+.comments > .comment_write {
+  padding-bottom: 15px;
+}
+
+.comments > .comment_write textarea {
+  float: left;
+  display: inline;
+  margin-top: 10px;
+	width: 91%;
+  color: #000;
+  border: 1px solid #e4eaec;
+  resize: none;
+}
+
+.comments > .comment_write .submit{
+  margin-top: 10px;
+  padding: 21px;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.view .btns {
+  float: right;
+  margin: 10px 10% 22px 0;
+}
+
+.view .btns a {
+  padding: 8px;
+  font-size: 13px;
+  border: 1px solid #d9ded9;
+  background: #f2f5f9;
+}
+
+#board .write {
+  height: auto;
+  margin-top: 100px;
+}
+
+.write img {
+  position: absolute;
+  top: 55px;
+  left: 83%;
+  width: 60px;
+}
+
+.write table {
+  width: 80%;
+  margin-top: 20px;
+  margin: 0 auto;
+  border-top: 5px solid #a5e5e7;
+  border-bottom: 5px solid #a5e5e7;
+}
+
+.write textarea {
+  width: 100%;
+  border: 0;
+  resize: none;
+}
+
+.write table td {
+  padding: 9px 7px;
+  font-size: 12px;
+  line-height: 2;
+  border-top: 1px solid #e5e5e5;
+}
+
+.write td:first-child {
+  width: 100px;
+  font-weight: bold;
+  text-align: center;
+  background: #f5f8f9;
+}
+
+.write .btns {
+  float: right;
+  margin-top: 15px;
+  margin-right: 12%;
+}
+
+.write .submit {
+  padding: 7px;
+  height: 38px;
+  border: 1px solid #3b3c3f;
+  background: #525f6e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.write .cancel {
+  padding: 7px;
+  border: 1px solid #d9ded9;
+  background: #f2f5f9;
+  color: #000;
+}
+
+#board .guide {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 30px;
+  height: auto;
+}
+
+.guide > div > .flag {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.guide .flag > img {
+  float: left;
+  margin-left: 40px;
+  width: 400px;
+  height: 280px;
+  border: 1px solid black;
+}
+
+.guide .flag > table {
+  width: 540px;
+  height: auto;
+  line-height: 1.5;
+  font-size: 15px;
+  font-family :'나눔고딕', 'Malgun Gothic', sans-serif;
+  white-space: normal;
+}
+
+.guide .flag > table > caption {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.guide .flag > table td {
+  padding: 10px 0;
+}
+
+.guide .flag > table tr > td:first-child {
+  width: 70px;
+  text-align: center;
+}
+
+.guide .flag > table tr > td:last-child {
+  padding-left: 10px;
+}
+
+.guide > div img {
+  margin-right: 28px;
+}
+
+.guide > div img:last-child {
+  margin-right: 0;
+}
+
+#map_canvas {
+  width: 100%;
+  height: 350px;
+  margin: 30px 0;
+}

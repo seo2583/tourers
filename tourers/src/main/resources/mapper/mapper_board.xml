@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper_board">
+
+	<sql id = "a" >
+		SELECT B.*, U.tr_nick FROM BOARD B JOIN tr_user U ON B.tr_id = U.tr_id
+	</sql>
+
+	<select id="getList" parameterType="hashmap" resultType="kr.co.tourers.vo.BoardVO">
+		<include refid="a" /> WHERE cat=#{cat} ORDER BY seq DESC LIMIT #{limit}, 10;
+	</select>
+	
+	<select id="getPicture" resultType="kr.co.tourers.vo.BoardFilesVO">
+		SELECT * FROM BOARD_FILES WHERE parent=#{parent};
+	</select>
+	
+	<select	id="getTotalList" resultType="int">
+		SELECT COUNT(*) FROM BOARD WHERE parent=0 AND cat=#{cat};	
+	</select>
+	
+	<select id="view" resultType="kr.co.tourers.vo.BoardVO">
+		<include refid="a" /> WHERE seq=#{seq};
+	</select>
+	
+	<select id="getFile" resultType="kr.co.tourers.vo.BoardFilesVO">
+		SELECT * FROM BOARD_FILES WHERE parent=#{parent};
+	</select>
+	
+	<select id="getComment" resultType="kr.co.tourers.vo.BoardVO">
+		<include refid="a" /> WHERE parent=#{parent};
+	</select>
+	
+	<update id="hitUp">
+		UPDATE BOARD SET hit=hit+1 WHERE seq=#{seq};
+	</update>
+	
+	<insert id="write" parameterType="kr.co.tourers.vo.BoardVO" useGeneratedKeys="true" keyProperty="seq">
+		INSERT INTO BOARD SET
+			tr_id=#{tr_id},
+			title=#{title},
+			content=#{content},
+			cat=#{cat},
+			file=#{file},
+			regip=#{regip},
+			regdate=NOW();
+	</insert>
+	
+	<insert id="fileUpload">
+		INSERT INTO BOARD_FILES SET
+			parent=#{parent},
+			savePath=#{savePath},
+			viewPath=#{viewPath},
+			oldName=#{oldName},
+			newName=#{newName};
+	</insert>
+	
+	<insert id="comment_write">
+		INSERT INTO BOARD SET
+			parent=#{parent},
+			tr_id=#{tr_id},
+			title="",
+			content=#{content},
+			cat="",
+			regip=#{regip},
+			regdate=NOW();
+	</insert>
+	
+	<delete id="comment_delete">
+		DELETE FROM BOARD WHERE seq=#{seq};
+	</delete>
+		
+	<update id="comment_num_plus">
+		UPDATE BOARD SET
+			comment=comment+1
+			WHERE seq=#{seq};
+	</update>
+	
+	<update id="comment_num_minus">
+		UPDATE BOARD SET
+			comment=comment-1
+			WHERE seq=#{seq};
+	</update>
+		
+	<update id="modify">
+		UPDATE BOARD SET 
+			title=#{title}, 
+			content=#{content},
+			regdate=NOW()
+			WHERE seq=#{seq};
+	</update>
+	
+	<delete id="deleteAll">
+		DELETE FROM BOARD WHERE seq=#{seq};
+		DELETE FROM BOARD WHERE parent=#{seq};
+		DELETE FROM BOARD_FILES WHERE parent=#{seq};
+	</delete>
+	
+	<update id="file_num_plus">
+		UPDATE BOARD_FILES SET download=download+1 WHERE parent=#{parent};
+	</update>
+	
+</mapper>
