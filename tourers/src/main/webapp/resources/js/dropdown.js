@@ -1,3 +1,4 @@
+// 드롭다운 메뉴
 $(function(){
 
   $(".menu_bar li").hover(function(){

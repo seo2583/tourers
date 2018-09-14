@@ -1,3 +1,4 @@
+// 메인화면의 이미지 슬라이드
 $(function(){
 
   var slides = $('.slider > ul > li');

@@ -1,3 +1,4 @@
+// 구글맵 표시
 function initialize() {
 
   var mapLocation = new google.maps.LatLng(latitude, longitude); // 지도에서 가운데로 위치할 위도와 경도

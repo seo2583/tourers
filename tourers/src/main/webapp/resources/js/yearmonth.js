@@ -1,3 +1,4 @@
+// 회원가입 form의 년도와 월
 $(function(){
 
   var dt = new Date();

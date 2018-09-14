@@ -1,3 +1,4 @@
+// 약관 체크 동의
 $(function() {
 
 	var nextBtn = $('.nextBtn');

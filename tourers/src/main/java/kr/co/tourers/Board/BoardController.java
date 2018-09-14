@@ -33,7 +33,8 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/commu.do")
 	public String commu(Model model, String cat, int pg) {
-
+		
+		// 한 화면에 보여질 글의 수
 		int countPage = 10;
 
 		// 이전 or 다음 버튼을 눌렀을때
@@ -84,6 +85,7 @@ public class BoardController {
 			return "/board/servicepage";
 		} else if (cat.equals("pic")) {
 			
+			// 사진이 저장된 경로를 데이터베이스를 이용해서 저장할 pic ArrayList
 			List<String> pic = new ArrayList<String>();
 			
 			Iterator<BoardVO> iterator = list.iterator();
@@ -111,9 +113,12 @@ public class BoardController {
 	@RequestMapping(value="/board/view.do")
 	public String view(HttpSession session, Model model, String cat, int pg, int seq) {
 		
+		// seq가 일치하는 글, 글에 첨부된 파일, 글의 댓글들
 		BoardVO view = service.view(seq);
 		BoardFilesVO file = service.getFile(seq);
 		List<BoardVO> comments = service.getComment(seq);
+		
+		// 해당 글의 조회수 증가
 		service.hitUp(seq);
 		
 		MemberVO user = (MemberVO) session.getAttribute("user");
@@ -150,11 +155,15 @@ public class BoardController {
 		// 파일 업로드
 		MultipartFile file = vo.getFname();
 		
+		// 파일 첨부 되었을 때 
 		if (!file.isEmpty()) {
-			// 파일 첨부 되었을 때
+			// 첨부파일의 원래 이름
 			oName = file.getOriginalFilename();
+			// 확장자 추출
 			String ext = oName.substring(oName.lastIndexOf("."));
+			// 첨부파일의 새로운 이름에 확장자를 더함
 			uName = UUID.randomUUID().toString()+ext;
+			
 			file.transferTo(new File(saveTarget + uName));
 			vo.setFile(1);
 		}
@@ -165,8 +174,10 @@ public class BoardController {
 		vo.setCat(cat);
 		vo.setRegip(request.getRemoteAddr());
 		
+		// 가장 최신 작성 글
 		int seq = service.write(vo);
 		
+		// 파일이 첨부되었을 때 BoardFiles 데이터베이스에 새 레코드 삽입 
 		if (!file.isEmpty()) {
 			
 			BoardFilesVO bfvo = new BoardFilesVO();
@@ -191,7 +202,11 @@ public class BoardController {
 		vo.setParent(seq);
 		vo.setTr_id(mvo.getTr_id());
 		vo.setRegip(request.getRemoteAddr());
+		
+		// 댓글 작성
 		service.comment_write(vo);
+		
+		// 해당 글의 댓글 개수 +1
 		service.comment_num_plus(seq);
 		
 		return "redirect:/board/view.do?cat="+cat+"&pg="+pg+"&seq="+seq;
@@ -200,6 +215,7 @@ public class BoardController {
 	@RequestMapping(value="/board/comment_delete.do")
 	public String comment_delete(String cat, int pg, int seq, int c_seq) {
 		
+		// 댓글 삭제하고 해당 글의 댓글 개수 -1
 		service.comment_delete(c_seq);
 		service.comment_num_minus(seq);
 		
@@ -234,6 +250,7 @@ public class BoardController {
 	@RequestMapping(value="/board/post_delete.do")
 	public String post_delete(String cat, int pg, int seq) {
 		
+		// 해당 글 삭제시 댓글과 첨부파일 또한 다같이 삭제
 		service.deleteAll(seq);
 		
 		return "redirect:/board/commu.do?cat="+cat+"&pg="+pg; 

@@ -1,3 +1,4 @@
+// 다음 우편주소
 function postcode() {
 	new daum.Postcode({
 		oncomplete : function(data) {

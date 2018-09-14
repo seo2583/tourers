@@ -1,3 +1,5 @@
+// 회원가입 form의 각 정보 유효성 검사 and 유효하면 form 전송 가능 
+
 $(function() {
 	
 	var form = $('.register > form');

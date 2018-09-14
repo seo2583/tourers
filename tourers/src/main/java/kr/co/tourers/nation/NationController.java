@@ -27,16 +27,19 @@ public class NationController {
 		return "/nation/nationInfo";
 	}
 	
+	
 	@RequestMapping(value="/nation/isNation.do")
 	@ResponseBody
 	public int isNation(String nationName) {
 		
+		// 검색시 해당하는 나라가 있으면 int값 리턴
 		return service.isNation(nationName);
 	}
 	
 	@RequestMapping(value="/nation/spotName.do")
 	public String getSpotName(Model model, String nationName) {
 		
+		// 주요 관광지 페이지의 관광지 이름들을 보여주기 위한 List
 		List<NationSpotVO> spots = service.getSpotName(nationName);
 		model.addAttribute("spots", spots);
 		model.addAttribute("nName", nationName);
@@ -48,6 +51,7 @@ public class NationController {
 	@ResponseBody
 	public NationSpotVO getSpotDetail(String spotName) {
 		
+		// 관광지를 클릭했을 때 관광지의 정보를 return
 		NationSpotVO spot = service.spotDetail(spotName);
 		
 		return spot;

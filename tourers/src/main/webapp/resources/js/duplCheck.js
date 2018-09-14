@@ -1,3 +1,6 @@
+// ajax통신을 위한 중복 체크 
+// 전역변수는 form전송시 체크하기 위한 선언
+
 var isIdOK = false;
 var isNickOK = false;
 var isEmailOK = false;

@@ -1,3 +1,4 @@
+// ajax통신을 통한 검색
 $(function() {
 	
 	$(".search").on("submit", function(event){

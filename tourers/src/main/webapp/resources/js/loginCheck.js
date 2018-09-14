@@ -1,3 +1,4 @@
+// 댓글 작성은 로그인 한 경우에만 가능
 $(function(){
 		
 	var comment_content = $(".comment_content");
